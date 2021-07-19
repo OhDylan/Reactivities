@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Application.Profiles;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain
+namespace Application.Activities
 {
-    public class Activity
+     public class ActivityDto
     {
-        // Entity framwork is going to recognize this to be the primary key when Activities table created
         public Guid Id { get; set; }
         public string Title { get; set; }
         public DateTime Date { get; set; }
@@ -14,7 +14,7 @@ namespace Domain
         public string Category { get; set; }
         public string City { get; set; }
         public string Venue { get; set; }
-        // To prevent null object
-        public ICollection<ActivityAttendee> Attendees { get; set; } = new List<ActivityAttendee>();
+        public string HostUsername { get; set; }
+        public ICollection<Profile> Profile { get; set; }
     }
 }
